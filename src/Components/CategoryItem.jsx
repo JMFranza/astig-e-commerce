@@ -40,7 +40,7 @@ const Button = styledComponents.button`
 `;
 
 
-const CategoryItem = ({item}) => {
+const CategoryItem = ({ item }) => {
   return (
     <Container>
         <Image src={item.img}/>

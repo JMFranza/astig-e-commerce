@@ -6,7 +6,7 @@ import Login from "./Pages/Login";
 import Cart from "./Pages/Cart";
 
 const App = () => {
-  return <Cart/>;
+  return <Home/>;
 };
 
 export default App;
