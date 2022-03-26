@@ -92,14 +92,61 @@ const PricetDetail = styledComponents.span`
     justify-content: center;
 `;
 
-const ProductAmountContainer = styledComponents.div``;
-const ProductAmount = styledComponents.div``;
-const ProductPrice = styledComponents.div``;
+const ProductAmountContainer = styledComponents.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+`;
+
+const ProductAmount = styledComponents.div`
+    font-size: 24px;
+    margin: 5px;
+`;
+
+const ProductPrice = styledComponents.div`
+    font-size: 30px;
+    font-weight: 200;
+`;
+
+const Hr = styledComponents.div`
+    background-color: #eee;
+    border: none;
+    height: 1px;
+`;
 
 const Summary = styledComponents.div`
     flex: 1;
+    border: 0.5px solid lightgray;
+    border-radius: 10px;
+    padding: 20px;
+    height: 50vh;
 `;
 
+const SummaryTitle = styledComponents.h1`
+    font-weight: 200;
+`;
+
+const SummaryItem = styledComponents.div`
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: ${(props) => props.type === "total" && "500"};
+    font-size: ${(props) => props.type === "total" && "24px"};
+`;
+
+const SummaryItemText = styledComponents.span`
+
+`;
+
+const SummaryItemPrice = styledComponents.span``;
+
+const Button = styledComponents.button`
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+`;
 
 
 
@@ -129,7 +176,7 @@ const Cart = () => {
                                 <ProductName><b>Product:</b> DENIM T-SHIRT WOMEN</ProductName>
                                 <ProductId><b>ID:</b> 987754700889</ProductId>
                                 <ProductColor color="wheat"/>
-                                <ProductSize><b>Size:</b> 37.5</ProductSize>
+                                <ProductSize><b>Size:</b> Medium</ProductSize>
                             </Details>
                         </ProductDetail>
 
@@ -142,14 +189,60 @@ const Cart = () => {
                             <ProductPrice>₱ 580</ProductPrice>
                         </PricetDetail>
                     </Product>
+
+                    <Hr/>
+
+                    <Product>
+                        <ProductDetail>
+                            <Image src="https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png"/>
+                            <Details>
+                                <ProductName><b>Product:</b> ECO-FRIENDLY TOTE BAG</ProductName>
+                                <ProductId><b>ID:</b> 9007547079881</ProductId>
+                                <ProductColor color="limegreen"/>
+                                <ProductSize><b>Size:</b> 37.5</ProductSize>
+                            </Details>
+                        </ProductDetail>
+                        <PricetDetail>
+                            <ProductAmountContainer>
+                                <Add/>
+                                <ProductAmount>1</ProductAmount>
+                                <Remove/>
+                            </ProductAmountContainer>
+                            <ProductPrice>₱ 600</ProductPrice>
+                        </PricetDetail>
+                    </Product>
                 </Info>
-                <Summary>summary</Summary>
+
+                <Summary>
+                    <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+                    <SummaryItem>
+                        <SummaryItemText>Subtotal</SummaryItemText>
+                        <SummaryItemPrice>₱ 580</SummaryItemPrice>
+                    </SummaryItem>
+
+                    <SummaryItem>
+                        <SummaryItemText>Estimated Shipping</SummaryItemText>
+                        <SummaryItemPrice>₱ 50</SummaryItemPrice>
+                    </SummaryItem>
+
+                    <SummaryItem>
+                        <SummaryItemText>Shipping Discount</SummaryItemText>
+                        <SummaryItemPrice>₱ -50</SummaryItemPrice>
+                    </SummaryItem>
+
+                    <SummaryItem type="total">
+                        <SummaryItemText>Total</SummaryItemText>
+                        <SummaryItemPrice>₱ 580</SummaryItemPrice>
+                    </SummaryItem>
+
+                    <Button>CHECKOUT NOW</Button>
+                </Summary>
             </Bottom>
 
         </Wrapper>
         <Footer/>
     </Container>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;
