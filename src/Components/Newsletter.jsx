@@ -17,7 +17,7 @@ const Title = styledComponents.h1`
 
 const Desc = styledComponents.div`
   font-size: 24px;
-  font-size: 300;
+  font-weight: 300;
   margin-bottom: 20px;
 `;
 
