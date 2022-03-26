@@ -64,7 +64,7 @@ const Icon = styledComponents.div`
 `;
 
 
-const Product = ({item}) => {
+const Product = ({ item }) => {
   return (
     <Container>
         <Circle/>
