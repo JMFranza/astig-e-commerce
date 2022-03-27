@@ -10,7 +10,6 @@ const Container = styledComponents.div`
     display: flex;
     position: relative;
     overflow: hidden;
-    ${mobile({ display: "none" })}
 `;
 
 const Arrow = styledComponents.div`
@@ -50,6 +49,7 @@ const Slide = styledComponents.div`
 const ImgContainer = styledComponents.div`
     height: 100%;
     flex: 1;
+    ${mobile({ display: "none" })}
 `;
 
 const Image = styledComponents.img`
