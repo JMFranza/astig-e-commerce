@@ -2,15 +2,20 @@ import React from 'react';
 import Badge from '@mui/material/Badge';
 import { Search, ShoppingCartOutlined } from '@mui/icons-material';
 import styledComponents from 'styled-components';
+import { mobile } from "../responsive";
+
 
 const Container = styledComponents.div`
   height: 60px;
+  ${mobile({ height: "50px" })}
 `;
+
 const Wrapper = styledComponents.div`
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ${mobile({ padding: "10px 0px" })}
 `;
 
 const Left = styledComponents.div`
@@ -22,6 +27,7 @@ const Left = styledComponents.div`
 const Language = styledComponents.span`
   font-size: 14px;
   cursor: pointer;
+  ${mobile({ display: "none" })}
 `;
 
 const SearchContainer = styledComponents.div`
@@ -29,11 +35,13 @@ const SearchContainer = styledComponents.div`
   display: flex;
   align-items: center;
   margin-left: 25px;
+  margin-right: 5px;
   padding: 5px;
 `;
 
 const Input = styledComponents.input`
   border: none;
+  ${mobile({ width: "50px" })}
 `;
 
 const Center = styledComponents.div`
@@ -43,6 +51,7 @@ const Center = styledComponents.div`
 
 const Logo = styledComponents.h1`
   font-weight: bold;
+  ${mobile({ fontSize: "24px" })}
 `;
 
 const Right = styledComponents.div`
@@ -50,12 +59,14 @@ const Right = styledComponents.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  ${mobile({ flex: 2, justifyContent: "center" })}
 `;
 
 const MenuItem = styledComponents.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px; 
+  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
 const Navbar = () => {
@@ -66,13 +77,13 @@ const Navbar = () => {
         <Left>
           <Language>EN</Language>
           <SearchContainer>
-            <Input/> 
+            <Input placeholder="Search"/> 
             <Search style={{color:"gray", fontSize:16}}/>
           </SearchContainer>
         </Left>
 
         <Center>
-          <Logo>ASTIG03 MERCHANDISE.</Logo>
+          <Logo>ASTIG03</Logo>
         </Center>
 
         <Right>
