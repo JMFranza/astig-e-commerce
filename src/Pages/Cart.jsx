@@ -3,11 +3,13 @@ import styledComponents from 'styled-components'
 import Announcement from '../Components/Announcement'
 import Footer from '../Components/Footer'
 import Navbar from '../Components/Navbar'
+import { mobile } from '../responsive';
 
 const Container = styledComponents.div``;
 
 const Wrapper = styledComponents.div`
     padding: 20px;
+    ${mobile({ padding: "10px" })}
 `;
 
 const Title = styledComponents.h1`
@@ -33,7 +35,7 @@ const TopButton = styledComponents.button`
 `;
 
 const TopTexts = styledComponents.div`
-
+    ${mobile({ display: "none" })}
 `;
 
 const TopText = styledComponents.span`
@@ -45,6 +47,7 @@ const TopText = styledComponents.span`
 const Bottom = styledComponents.div`
     display: flex;
     justify-content: space-between;
+    ${mobile({ flexDirection: "column" })}
 `;
 
 const Info = styledComponents.div`
@@ -54,6 +57,7 @@ const Info = styledComponents.div`
 const Product = styledComponents.div`
     display: flex;
     justify-content: space-between;
+    ${mobile({ flexDirection: "column" })}
 `;
 
 const ProductDetail = styledComponents.div`
@@ -101,11 +105,13 @@ const ProductAmountContainer = styledComponents.div`
 const ProductAmount = styledComponents.div`
     font-size: 24px;
     margin: 5px;
+    ${mobile({ margin: "5px 15px" })}
 `;
 
 const ProductPrice = styledComponents.div`
     font-size: 30px;
     font-weight: 200;
+    ${mobile({ marginBottom: "20px" })}
 `;
 
 const Hr = styledComponents.div`
@@ -134,10 +140,7 @@ const SummaryItem = styledComponents.div`
     font-size: ${(props) => props.type === "total" && "24px"};
 `;
 
-const SummaryItemText = styledComponents.span`
-
-`;
-
+const SummaryItemText = styledComponents.span``;
 const SummaryItemPrice = styledComponents.span``;
 
 const Button = styledComponents.button`
